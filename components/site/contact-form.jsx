@@ -141,7 +141,7 @@ export default function ContactForm() {
             onChange={update("name")}
             autoComplete="name"
             required
-            placeholder="Chandan Pradhan"
+            placeholder="Your Full Name"
             className={fieldClass}
           />
         </Field>
@@ -155,7 +155,7 @@ export default function ContactForm() {
             onChange={update("phone")}
             autoComplete="tel"
             required
-            placeholder="+91 98765 43210"
+            placeholder="+91 98765 XXXXX"
             className={fieldClass}
           />
         </Field>

@@ -2,7 +2,7 @@ import * as XLSX from "xlsx";
 import { NextResponse } from "next/server";
 import { getAdminSession } from "@/lib/auth";
 import { allLeadsForExport } from "@/lib/leads";
-import { formatIST } from "@/lib/format";
+import { formatINR, formatIST } from "@/lib/format";
 
 const header = [
   "Reference",
@@ -13,6 +13,8 @@ const header = [
   "Project type",
   "Location",
   "Budget",
+  "Estimated range",
+  "Estimate basis",
   "Status",
   "Source",
   "Message",
@@ -44,6 +46,10 @@ export async function GET(request) {
       "Project type": lead.projectType,
       Location: lead.city,
       Budget: lead.budget,
+      "Estimated range": lead.estimate
+        ? `${formatINR(lead.estimate.min)} - ${formatINR(lead.estimate.max)}`
+        : "",
+      "Estimate basis": lead.estimate ? lead.estimate.summary : "",
       Status: lead.status,
       Source: lead.source,
       Message: lead.message,
@@ -60,6 +66,8 @@ export async function GET(request) {
       { wch: 24 },
       { wch: 22 },
       { wch: 18 },
+      { wch: 30 },
+      { wch: 58 },
       { wch: 11 },
       { wch: 10 },
       { wch: 62 },

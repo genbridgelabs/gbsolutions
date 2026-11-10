@@ -28,6 +28,9 @@ and shadcn/ui (Base UI primitives).
 - **3D walkthrough** (`/work/[slug]/room`) — an immersive WebGL room built from that
   project's photographs: drag to look, walk with W A S D or the arrow keys, captions
   follow the print you face, and Escape returns to the project.
+- **Cost estimator** (`/#estimator`) — six choices (building type, size, scope of
+  work, finish, floor area, site) and a live ballpark range, then a short form that
+  files the range with the studio as an enquiry.
 - The enquiry form validates on the server with Zod, rate-limits by IP, drops honeypot
   submissions, and shows a reference number on success.
 - Motion is CSS-first and respects `prefers-reduced-motion`. Photography is graded in
@@ -43,13 +46,14 @@ and shadcn/ui (Base UI primitives).
 
 | Section | What it does |
 | --- | --- |
-| **Form submissions** (`/admin`) | Every field captured, newest first: totals, a 14-day strip, search, status and project-type filters, pagination, a detail dialog with the full record, studio notes, status changes, delete, and **Download Excel** |
+| **Form submissions** (`/admin`) | Every field captured, newest first: totals, a 14-day strip, search, status and project-type filters, pagination, a detail dialog with the full record, studio notes, status changes, delete, and **Download Excel**. Enquiries that came through the estimator carry their ballpark range against the budget, and the dialog shows the choices behind it |
 | **Gallery** (`/admin/gallery`) | Add, edit, publish/hide, reorder and delete projects; each one holds a cover plus an ordered set of photographs with alt text and captions |
 | **Video journal** (`/admin/journal`) | Add, edit, publish/hide, reorder and delete films; upload a file or paste a YouTube / Vimeo link, set the poster frame, place, length and description |
 
 - **Download Excel** exports a real `.xlsx` workbook (SheetJS) using the filters
-  currently applied: one *Enquiries* sheet with column widths and autofilter, plus an
-  *About this file* sheet recording what was exported.
+  currently applied: one *Enquiries* sheet with column widths and autofilter, the
+  estimator's range and basis included, plus an *About this file* sheet recording
+  what was exported.
 - Uploads go to `public/uploads/` and are served from there. They are not committed.
 
 **Data**
@@ -58,6 +62,7 @@ Three MongoDB collections in `gb-solutions-dev`:
 
 ```
 leads          name, phone, email, projectType, city, budget, message,
+               estimate{ scope, size, style, work, area, min, max, summary },
                source, status, adminNote, ipHash, createdAt, updatedAt
 galleryitems   title, slug, category, typeLabel, place, year, summary, description,
                cover, coverAlt, images[{ url, alt, caption }], order, published,
@@ -135,6 +140,14 @@ journal clips are real H.264 files cut from those stills by `scripts/build-video
 (a slow push, grain and a fade — seven seconds each). They play in the browser like any
 other MP4, but they are not camera footage. Replace them with the studio's own films
 before launch: upload an MP4 in **Video journal**, or paste a YouTube / Vimeo link.
+
+**The cost estimator:** the rate card lives in `lib/estimator.js` — per square foot,
+by scope of work, adjusted for building type and finish. The browser and
+`/api/estimator` import the same module, and the route recomputes the range before it
+saves anything, so the desk never receives numbers a visitor could have edited in the
+page. The figures are interiors only: structure, loose furniture, appliances and GST
+sit outside them, and the section says so. Change the rates in one place and both the
+page and the saved enquiries follow.
 
 **The 3D room:** there are no 3D scans or models of these houses, so `/work/[slug]/room`
 is not a reconstruction of the building. It is a room — floor, plaster walls, brass

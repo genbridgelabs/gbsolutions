@@ -20,7 +20,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { formatIST, relativeTime } from "@/lib/format";
+import { formatINR, formatIST, formatLakh, relativeTime } from "@/lib/format";
 
 const STATUS_LABELS = {
   new: "New",
@@ -165,6 +165,17 @@ export default function LeadsTable({ items }) {
                 </TableCell>
                 <TableCell className="whitespace-nowrap py-4 text-[0.78rem] text-quiet">
                   {lead.budget}
+                  {lead.estimate ? (
+                    <span
+                      className="num mt-0.5 block text-[0.72rem] text-brass"
+                      title={`Estimator ballpark: ${formatINR(
+                        lead.estimate.min
+                      )} – ${formatINR(lead.estimate.max)}`}
+                    >
+                      est. {formatLakh(lead.estimate.min)}–
+                      {formatLakh(lead.estimate.max)}
+                    </span>
+                  ) : null}
                 </TableCell>
                 <TableCell className="py-4">
                   <StatusBadge status={lead.status} />
@@ -269,6 +280,21 @@ export default function LeadsTable({ items }) {
                     </dd>
                   </div>
                 </dl>
+
+                {selected.estimate ? (
+                  <div className="mt-6 border border-brass/35 bg-brass/5 px-4 py-4">
+                    <p className="text-[0.7rem] text-[#8a6420]">
+                      From the cost estimator
+                    </p>
+                    <p className="num mt-2 font-display text-[1.4rem] leading-none text-ink">
+                      {formatINR(selected.estimate.min)} –{" "}
+                      {formatINR(selected.estimate.max)}
+                    </p>
+                    <p className="mt-2 text-[0.78rem] leading-relaxed text-ink-soft">
+                      {selected.estimate.summary}
+                    </p>
+                  </div>
+                ) : null}
 
                 <div className="mt-6 border-l-2 border-brass/40 bg-plaster/60 px-4 py-4">
                   <p className="text-[0.7rem] text-quiet">In their words</p>

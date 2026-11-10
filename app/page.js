@@ -5,6 +5,7 @@ import Reveal from "@/components/site/reveal";
 import Gallery from "@/components/site/gallery";
 import VideoJournal from "@/components/site/video-journal";
 import ContactForm from "@/components/site/contact-form";
+import CostEstimator from "@/components/site/cost-estimator";
 import { materials, processSteps, studio } from "@/lib/content";
 import { listGallery } from "@/lib/gallery";
 import { listVideos } from "@/lib/videos";
@@ -218,6 +219,39 @@ export default async function Home() {
 
             <div className="mt-12">
               <Gallery items={gallery} />
+            </div>
+          </div>
+        </section>
+
+        {/* Cost estimator */}
+        <section id="estimator" className="border-t border-line bg-paper/40">
+          <div className="mx-auto max-w-[90rem] px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+            <div className="grid gap-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
+              <Reveal className="lg:sticky lg:top-28 lg:self-start">
+                <p className="label">Cost estimator</p>
+                <p className="mt-6 max-w-[22ch] text-[0.82rem] leading-relaxed text-quiet">
+                  Six choices and a floor area, then a number we will defend on
+                  site.
+                </p>
+              </Reveal>
+
+              <div>
+                <Reveal>
+                  <h2 className="display-lg max-w-[18ch] text-ink">
+                    A ballpark before the first phone call.
+                  </h2>
+                  <p className="lede mt-6 max-w-[50ch]">
+                    Most people arrive with a number in their head and no way to
+                    test it. Set the scope, the size and the finish, and the
+                    studio gets exactly the range you saw — not a lead with a
+                    blank budget.
+                  </p>
+                </Reveal>
+
+                <Reveal delay={80} className="mt-10">
+                  <CostEstimator />
+                </Reveal>
+              </div>
             </div>
           </div>
         </section>

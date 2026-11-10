@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBSOLUTIONS | Luxury Interior Design & Turnkey Architecture in Odisha</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxuryDark: '#121212',
+                        cardDark: '#1E1E1E',
+                        accentGold: '#D4AF37',
+                        sandstone: '#E3D5C5',
+                        earthBrown: '#2C221E'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-luxuryDark text-gray-100 font-sans antialiased selection:bg-accentGold selection:text-black">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-luxuryDark/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wider text-white">
+                GB<span class="text-accentGold">SOLUTIONS</span>
+                <span class="block text-[10px] tracking-[0.3em] text-gray-400 font-sans uppercase">Odisha</span>
+            </a>
+            
+            <nav class="hidden xl:flex items-center space-x-7 text-sm font-medium tracking-wide">
+                <a href="#philosophy" class="hover:text-accentGold transition-colors">Philosophy</a>
+                <a href="#projects" class="hover:text-accentGold transition-colors">Projects</a>
+                <a href="#estimator" class="hover:text-accentGold transition-colors">Cost Estimator</a>
+                <a href="#services" class="hover:text-accentGold transition-colors">Turnkey Services</a>
+                <a href="#stories" class="hover:text-accentGold transition-colors">Video Journal</a>
+                <a href="#vendors" class="hover:text-accentGold transition-colors">Vendor Portal</a>
+                <a href="#designers" class="text-accentGold hover:underline">Jibika Network</a>
+                <a href="#contact" class="hover:text-accentGold transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#estimator" class="hidden sm:inline-block bg-accentGold text-black font-semibold text-xs uppercase tracking-widest px-5 py-3 hover:bg-white transition-all">
+                    Instant Estimate
+                </a>
+                <button id="menu-btn" class="xl:hidden text-2xl text-white focus:outline-none" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile & Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden xl:hidden bg-cardDark border-b border-white/10 px-6 py-5 space-y-3">
+            <a href="#philosophy" class="block text-sm hover:text-accentGold">Philosophy</a>
+            <a href="#projects" class="block text-sm hover:text-accentGold">Projects</a>
+            <a href="#estimator" class="block text-sm hover:text-accentGold">Cost Estimator</a>
+            <a href="#services" class="block text-sm hover:text-accentGold">Turnkey Services</a>
+            <a href="#stories" class="block text-sm hover:text-accentGold">Video Journal</a>
+            <a href="#vendors" class="block text-sm hover:text-accentGold">Vendor Portal</a>
+            <a href="#designers" class="block text-sm text-accentGold font-semibold">Jibika Freelance Network</a>
+            <a href="#contact" class="block text-sm hover:text-accentGold">Contact & Concierge</a>
+            <a href="#estimator" class="block w-full text-center bg-accentGold text-black text-xs font-bold uppercase py-3 mt-2">Get Instant Estimate</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80" alt="Luxury Interior Design Odisha" class="w-full h-full object-cover opacity-40 scale-105 animate-pulse duration-[10000ms]">
+            <div class="absolute inset-0 bg-gradient-to-t from-luxuryDark via-luxuryDark/40 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6 mt-16">
+            <span class="text-accentGold uppercase tracking-[0.4em] text-xs font-semibold block mb-4">Architecture & Interior Architecture Studio</span>
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-white mb-6 leading-tight">
+                Crafting Contextual Spaces <br><span class="italic font-normal">That Define Luxury in Odisha</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base font-light mb-10 leading-relaxed">
+                Harmonizing regional sensibilities with avant-garde spatial design. Explore our bespoke turnkey residences, automated cost estimator, vendor channels, and Jibika designer collaboration platform.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#estimator" class="w-full sm:w-auto bg-accentGold text-black font-semibold text-xs uppercase tracking-widest px-8 py-4 hover:bg-white transition-all">
+                    Calculate Estimate
+                </a>
+                <a href="#projects" class="w-full sm:w-auto bg-white text-black font-semibold text-xs uppercase tracking-widest px-8 py-4 hover:bg-accentGold transition-all">
+                    Explore Masterpieces
+                </a>
+                <a href="#designers" class="w-full sm:w-auto border border-white/30 text-white font-semibold text-xs uppercase tracking-widest px-8 py-4 hover:border-accentGold hover:text-accentGold transition-all">
+                    Jibika Network
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center text-gray-400 text-xs tracking-widest animate-bounce">
+            <span>SCROLL</span>
+            <i class="fa-solid fa-arrow-down mt-2 text-accentGold"></i>
+        </div>
+    </section>
+
+    <!-- Studio Philosophy & Track Record -->
+    <section id="philosophy" class="py-24 px-6 bg-cardDark/50 border-y border-white/5">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-3">Our Design Ethos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white font-light leading-snug mb-6">
+                    Spaces should reflect your narrative, executed with uncompromising precision.
+                </h2>
+                <p class="text-gray-400 font-light leading-relaxed mb-6">
+                    At GBSOLUTIONS, we approach design holistically. Operating across Bhubaneswar, Cuttack, Puri, and throughout Odisha, we bridge the gap between visionary architectural concepts and flawless site execution. Every material, shadow, and texture is curated to elevate daily living.
+                </p>
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 text-center md:text-left">
+                    <div>
+                        <div class="font-serif text-3xl text-accentGold font-bold">120+</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Projects Handed Over</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl text-accentGold font-bold">15+</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years Regional Track</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl text-accentGold font-bold">100%</div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Turnkey Delivery</div>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-[4/5] overflow-hidden rounded-none shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80" alt="Interior Design Philosophy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-accentGold text-black p-6 hidden sm:block shadow-xl">
+                    <p class="font-serif italic font-bold text-lg">"Architecture is frozen music."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Projects Portfolio -->
+    <section id="projects" class="py-28 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Portfolio</span>
+                <h2 class="font-serif text-4xl text-white font-light">Featured Masterpieces</h2>
+            </div>
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap gap-3 mt-6 md:mt-0 text-xs tracking-widest uppercase">
+                <button class="px-4 py-2 bg-accentGold text-black font-semibold transition-all">All</button>
+                <button class="px-4 py-2 border border-white/20 hover:border-accentGold hover:text-accentGold transition-all">Residential</button>
+                <button class="px-4 py-2 border border-white/20 hover:border-accentGold hover:text-accentGold transition-all">Commercial</button>
+                <button class="px-4 py-2 border border-white/20 hover:border-accentGold hover:text-accentGold transition-all">Hospitality</button>
+            </div>
+        </div>
+
+        <!-- 4-Project Showcase Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- Project 1 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[16/11] overflow-hidden relative mb-4">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80" alt="The Monolith Residence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="border border-white text-white px-6 py-3 text-xs uppercase tracking-widest bg-black/50">View Case Study</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-accentGold text-xs uppercase tracking-widest">Residential • Bhubaneswar</span>
+                        <h3 class="font-serif text-2xl text-white mt-1 group-hover:text-accentGold transition-colors">The Monolith Villa</h3>
+                    </div>
+                    <span class="text-gray-400 text-sm font-light">2025</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group cursor-pointer md:mt-16">
+                <div class="aspect-[16/11] overflow-hidden relative mb-4">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="The Minimalist Penthouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="border border-white text-white px-6 py-3 text-xs uppercase tracking-widest bg-black/50">View Case Study</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-accentGold text-xs uppercase tracking-widest">Penthouse • Cuttack</span>
+                        <h3 class="font-serif text-2xl text-white mt-1 group-hover:text-accentGold transition-colors">Aethelgard Skyline</h3>
+                    </div>
+                    <span class="text-gray-400 text-sm font-light">2026</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="group cursor-pointer">
+                <div class="aspect-[16/11] overflow-hidden relative mb-4">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="Boutique Hotel Lobby" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="border border-white text-white px-6 py-3 text-xs uppercase tracking-widest bg-black/50">View Case Study</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-accentGold text-xs uppercase tracking-widest">Hospitality • Puri Heritage</span>
+                        <h3 class="font-serif text-2xl text-white mt-1 group-hover:text-accentGold transition-colors">The Terracotta Courtyard</h3>
+                    </div>
+                    <span class="text-gray-400 text-sm font-light">2025</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="group cursor-pointer md:mt-16">
+                <div class="aspect-[16/11] overflow-hidden relative mb-4">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80" alt="Corporate Headquarters" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="border border-white text-white px-6 py-3 text-xs uppercase tracking-widest bg-black/50">View Case Study</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-accentGold text-xs uppercase tracking-widest">Commercial Office • Bhubaneswar</span>
+                        <h3 class="font-serif text-2xl text-white mt-1 group-hover:text-accentGold transition-colors">Nexus Tech Workspace</h3>
+                    </div>
+                    <span class="text-gray-400 text-sm font-light">2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Cost Estimator & Integrated Consultation Section -->
+    <section id="estimator" class="py-24 px-6 bg-cardDark border-y border-white/10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Interactive Tool</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white font-light">Instant Project Cost Estimator</h2>
+                <p class="text-gray-400 text-sm mt-2 font-light">Configure your spatial parameters to obtain a curated ballpark estimate, then seamlessly request an itemized consultation.</p>
+            </div>
+
+            <div class="bg-luxuryDark border border-white/10 p-8 sm:p-12 shadow-2xl">
+                <!-- Estimator Input Controls -->
+                <form id="estimator-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2 font-medium">Room Type / Property Scope</label>
+                            <select id="est-scope" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                                <option value="apartment">Full Apartment / Duplex</option>
+                                <option value="villa">Independent Luxury Villa</option>
+                                <option value="commercial">Commercial Office Space</option>
+                                <option value="hospitality">Restaurant / Café / Boutique</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2 font-medium">Number of Rooms / Zones</label>
+                            <select id="est-rooms" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                                <option value="2">2 BHK (approx. 1,000 sq.ft)</option>
+                                <option value="3" selected>3 BHK (approx. 1,500 sq.ft)</option>
+                                <option value="4">4+ BHK / Large Duplex (2,500+ sq.ft)</option>
+                                <option value="custom">Commercial Area (3,000+ sq.ft)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2 font-medium">Design Style Preference</label>
+                            <select id="est-style" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                                <option value="minimalist">Minimalist Luxe & Warm Neutrals</option>
+                                <option value="tropical">Tropical Modern (Courtyard & Wood)</option>
+                                <option value="traditional">Traditional Odia Heritage Fusion</option>
+                                <option value="industrial">Industrial & Contemporary Concrete</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2 font-medium">Scope of Work</label>
+                            <select id="est-type" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                                <option value="turnkey">Full Turnkey Execution (Design + Build)</option>
+                                <option value="designonly">Design & 3D Visualization Only</option>
+                                <option value="renovation">Renovation & Structural Modification</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 text-center">
+                        <button type="button" onclick="calculateEstimate()" class="bg-accentGold text-black font-semibold text-xs uppercase tracking-widest px-8 py-4 hover:bg-white transition-all shadow-lg">
+                            Generate Rough Estimate
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Calculation Result Box -->
+                <div id="estimate-result" class="hidden mt-8 p-6 bg-cardDark border border-accentGold/40 text-center">
+                    <span class="text-xs uppercase tracking-[0.2em] text-accentGold font-semibold block mb-1">Estimated Budget Range</span>
+                    <div id="est-amount" class="font-serif text-3xl sm:text-4xl text-white font-bold my-2">₹ 6,50,000 - ₹ 8,50,000</div>
+                    <p class="text-gray-400 text-xs font-light max-w-lg mx-auto">This is an approximate ballpark calculation based on standard market rates across Odisha. Fill out your details below to schedule an on-site evaluation.</p>
+                </div>
+
+                <!-- Integrated Follow-up Contact Box -->
+                <div id="estimator-contact-section" class="hidden mt-8 pt-8 border-t border-white/10">
+                    <div class="mb-6 text-center">
+                        <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-bold block mb-1">Step 2: Connect With Us</span>
+                        <h3 class="font-serif text-xl text-white">Request Consultation for this Estimate</h3>
+                        <p class="text-gray-400 text-xs mt-1">Provide your contact info and specific notes so our senior Odisha architect can reach out.</p>
+                    </div>
+
+                    <form id="estimator-contact-form" onsubmit="handleEstimatorContact(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Your Full Name</label>
+                                <input type="text" id="ec-name" required placeholder="e.g. Priyabrata Mohanty" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Phone Number</label>
+                                <input type="tel" id="ec-mobile" required placeholder="+91 98765 43210" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-300 mb-1">Project Site / Specific Notes</label>
+                            <textarea id="ec-requirement" rows="3" required placeholder="State your site location (e.g. Patia, Bhubaneswar or CDA, Cuttack) and timeline..." class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-black font-semibold text-xs uppercase tracking-widest py-4 hover:bg-accentGold transition-all">
+                            Submit Consultation Request
+                        </button>
+
+                        <div id="ec-success" class="hidden p-4 bg-cardDark border border-accentGold text-center mt-4">
+                            <p class="text-accentGold text-xs uppercase tracking-widest font-bold">Request Logged Successfully!</p>
+                            <p class="text-gray-300 text-xs mt-1">Our GBSOLUTIONS team will connect with you within 24 hours.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Turnkey Services Workflow -->
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto border-t border-white/10">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">End-to-End Capabilities</span>
+            <h2 class="font-serif text-4xl text-white font-light">The Turnkey Workflow</h2>
+            <p class="text-gray-400 text-sm mt-3 font-light">We take complete accountability from blueprints and permissions to final handover.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="p-8 bg-cardDark border border-white/5 relative">
+                <span class="text-5xl font-serif text-white/10 font-bold absolute top-4 right-6">01</span>
+                <h3 class="font-serif text-xl text-white mb-3 mt-4">Consultation & Brief</h3>
+                <p class="text-gray-400 text-xs font-light leading-relaxed">Understanding your aesthetic taste, family requirements, timeline, and exact budget metrics.</p>
+            </div>
+            <div class="p-8 bg-cardDark border border-white/5 relative">
+                <span class="text-5xl font-serif text-white/10 font-bold absolute top-4 right-6">02</span>
+                <h3 class="font-serif text-xl text-white mb-3 mt-4">3D Visualization</h3>
+                <p class="text-gray-400 text-xs font-light leading-relaxed">Photorealistic VR walkthroughs, CAD space-planning, and lighting simulations before ground break.</p>
+            </div>
+            <div class="p-8 bg-cardDark border border-white/5 relative">
+                <span class="text-5xl font-serif text-white/10 font-bold absolute top-4 right-6">03</span>
+                <h3 class="font-serif text-xl text-white mb-3 mt-4">Procurement</h3>
+                <p class="text-gray-400 text-xs font-light leading-relaxed">Sourcing certified veneers, premium Italian marble, regional stone, and precision architectural fittings.</p>
+            </div>
+            <div class="p-8 bg-cardDark border border-white/5 relative">
+                <span class="text-5xl font-serif text-white/10 font-bold absolute top-4 right-6">04</span>
+                <h3 class="font-serif text-xl text-white mb-3 mt-4">Execution & Delivery</h3>
+                <p class="text-gray-400 text-xs font-light leading-relaxed">On-site master carpentry, MEP integration, rigorous quality audits, and key handover.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Journal Section (Buildofy Style) -->
+    <section id="stories" class="py-24 px-6 bg-cardDark/50 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Buildofy-Inspired Insights</span>
+                <h2 class="font-serif text-4xl text-white font-light">Inside Our Home Stories</h2>
+                <p class="text-gray-400 text-sm mt-3 font-light">Explore walkthroughs of built homes across Odisha and witness real craftsmanship narratives.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Video Card 1 -->
+                <div class="bg-luxuryDark border border-white/10 group cursor-pointer">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=800&q=80" alt="Video thumb 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-accentGold text-black flex items-center justify-center pl-0.5 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-accentGold uppercase tracking-widest">Episode 14 • 12 mins</span>
+                        <h3 class="font-serif text-xl text-white mt-2 mb-3">Designing For Tropical Climates in Coastal Odisha</h3>
+                        <p class="text-gray-400 text-xs font-light line-clamp-2">How we integrated passive cooling, internal courtyards, and local laterite masonry into modern duplexes.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="bg-luxuryDark border border-white/10 group cursor-pointer">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585155208-8b0213d28eb4?auto=format&fit=crop&w=800&q=80" alt="Video thumb 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-accentGold text-black flex items-center justify-center pl-0.5 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-accentGold uppercase tracking-widest">Episode 15 • 18 mins</span>
+                        <h3 class="font-serif text-xl text-white mt-2 mb-3">Maximizing Space in Compact Urban Apartments</h3>
+                        <p class="text-gray-400 text-xs font-light line-clamp-2">Smart joinery, concealed sliding partitions, and multi-functional storage solutions engineered for Bhubaneswar flats.</p>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="bg-luxuryDark border border-white/10 group cursor-pointer">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Video thumb 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-accentGold text-black flex items-center justify-center pl-0.5 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs text-accentGold uppercase tracking-widest">Episode 16 • 15 mins</span>
+                        <h3 class="font-serif text-xl text-white mt-2 mb-3">The Turnkey Execution Journey Explained</h3>
+                        <p class="text-gray-400 text-xs font-light line-clamp-2">A candid behind-the-scenes look at how GBSOLUTIONS orchestrates specialized labor, procurement, and QA checkpoints.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vendor Registration Portal -->
+    <section id="vendors" class="py-24 px-6 bg-luxuryDark border-t border-white/10">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Supply Chain Partnership</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white font-light">Vendor & Supplier Registration</h2>
+                <p class="text-gray-400 text-sm mt-2 font-light">Are you a material manufacturer, hardware supplier, stone fabricator, or lighting partner in Odisha? Register your catalog to partner with us.</p>
+            </div>
+
+            <form id="vendor-form" onsubmit="handleVendorReg(event)" class="bg-cardDark border border-white/10 p-8 sm:p-10 space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Company / Vendor Name</label>
+                        <input type="text" id="v-name" required placeholder="e.g. Utkal Timber & Stones" class="w-full bg-luxuryDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Contact Person</label>
+                        <input type="text" id="v-contact" required placeholder="Full Name" class="w-full bg-luxuryDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Supply Category</label>
+                        <select id="v-category" class="w-full bg-luxuryDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                            <option value="timber">Timber, Veneers & Plywood</option>
+                            <option value="stone">Granite, Italian Marble & Natural Stones</option>
+                            <option value="hardware">Architectural Hardware & Fittings</option>
+                            <option value="lighting">Architectural Lighting & Automation</option>
+                            <option value="fab">Metal Fabrication, Glass & Façades</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Business Location in Odisha</label>
+                        <input type="text" id="v-loc" required placeholder="e.g. Rasulgarh, Bhubaneswar" class="w-full bg-luxuryDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">List of Supplies / Catalog Summary</label>
+                    <textarea id="v-details" rows="3" required placeholder="Describe material inventory, OEM brands, or daily production capacity..." class="w-full bg-luxuryDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-accentGold text-black font-semibold text-xs uppercase tracking-widest py-4 hover:bg-white transition-all shadow-lg">
+                    Register Vendor & Generate ID
+                </button>
+
+                <!-- Dynamic Vendor ID Box -->
+                <div id="vendor-success" class="hidden p-4 bg-luxuryDark border border-accentGold text-center">
+                    <p class="text-accentGold text-xs uppercase tracking-widest font-bold">Registration Successful!</p>
+                    <p class="text-white font-serif text-lg mt-1" id="v-id-display">Your Vendor ID: <span class="text-accentGold">GB-VEND-8492</span></p>
+                    <p class="text-gray-400 text-xs mt-1">Our procurement department will reach out to onboard your catalog.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Jibika Designer Registration & Interactive Freelance Portal -->
+    <section id="designers" class="py-24 px-6 bg-cardDark border-t border-white/10">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-14">
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Jibika Freelance Network</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-white font-light">Interior Designer & Architect Registration</h2>
+                <p class="text-gray-400 text-sm mt-2 font-light">Join the <strong>Jibika</strong> collaborative network. Register your portfolio to immediately unlock live freelance architectural and interior projects across Odisha.</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form id="designer-form" onsubmit="handleDesignerReg(event)" class="bg-luxuryDark border border-white/10 p-8 sm:p-10 space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Full Name</label>
+                        <input type="text" id="d-name" required placeholder="Architect / Designer Name" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Professional Email</label>
+                        <input type="email" id="d-email" required placeholder="name@domain.com" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Primary Design Focus</label>
+                        <select id="d-cap" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                            <option value="residential">Residential Space Planning & 3D Renderings</option>
+                            <option value="commercial">Commercial & Modern Office Interiors</option>
+                            <option value="hospitality">Hospitality, Café & Boutique Interiors</option>
+                            <option value="revamp">Modular Kitchen & Joinery Detailing</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Software Proficiency</label>
+                        <input type="text" id="d-software" required placeholder="e.g. AutoCAD, SketchUp, V-Ray, Revit, 3ds Max" class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-300 mb-2">Portfolio URL (Behance / Drive / Website)</label>
+                    <input type="url" id="d-portfolio" required placeholder="https://..." class="w-full bg-cardDark border border-white/20 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                </div>
+
+                <button type="submit" class="w-full bg-accentGold text-black font-semibold text-xs uppercase tracking-widest py-4 hover:bg-white transition-all shadow-lg">
+                    Complete Registration & Enter Jibika Portal
+                </button>
+            </form>
+
+            <!-- Active Jibika Project Board -->
+            <div id="jibika-portal" class="hidden mt-10 p-8 bg-luxuryDark border border-accentGold">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-white/10 pb-4 mb-6">
+                    <div>
+                        <span class="text-accentGold text-xs uppercase tracking-[0.2em] font-bold">Jibika Design Hub • Active Freelancer Session</span>
+                        <h3 class="font-serif text-2xl text-white mt-1">Live Architectural Projects Board</h3>
+                    </div>
+                    <div class="mt-4 sm:mt-0 bg-cardDark px-4 py-2 border border-white/20">
+                        <span class="text-xs text-gray-400 block">Assigned ID:</span>
+                        <span id="assigned-did" class="text-accentGold font-mono font-bold text-sm">GB-JB-9042</span>
+                    </div>
+                </div>
+
+                <p class="text-gray-300 text-xs mb-6 font-light">Welcome to the Jibika Freelance Portal. Choose any open project brief, download CAD guidelines, and submit your 3D concepts for GBSOLUTIONS review.</p>
+
+                <div class="space-y-4">
+                    <!-- Project Brief 1 -->
+                    <div class="bg-cardDark p-5 border border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-[10px] bg-accentGold/20 text-accentGold px-2 py-1 uppercase tracking-widest">Urgent Brief</span>
+                            <h4 class="font-serif text-lg text-white mt-2">4BHK Duplex Interior Concept - Patia, Bhubaneswar</h4>
+                            <p class="text-gray-400 text-xs mt-1">Required: Complete false ceiling layouts, ambient lighting schedules, and living room 3D photorealistic renders.</p>
+                        </div>
+                        <button onclick="alert('Project brief and CAD base files have been downloaded!')" class="bg-white text-black font-semibold text-[10px] uppercase tracking-widest px-4 py-2 hover:bg-accentGold transition-all">
+                            Accept Project Brief
+                        </button>
+                    </div>
+
+                    <!-- Project Brief 2 -->
+                    <div class="bg-cardDark p-5 border border-white/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <span class="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-1 uppercase tracking-widest">Commercial Office</span>
+                            <h4 class="font-serif text-lg text-white mt-2">Tech Startup Workspace Layout - Saheed Nagar</h4>
+                            <p class="text-gray-400 text-xs mt-1">Required: Workstation ergonomic layout, acoustic fluted panels, and open cafeteria concepts.</p>
+                        </div>
+                        <button onclick="alert('Project brief and CAD base files have been downloaded!')" class="bg-white text-black font-semibold text-[10px] uppercase tracking-widest px-4 py-2 hover:bg-accentGold transition-all">
+                            Accept Project Brief
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Contact & Private Consultation -->
+    <footer id="contact" class="bg-cardDark border-t border-white/10 pt-20 pb-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+            <div>
+                <span class="text-accentGold text-xs uppercase tracking-[0.3em] font-semibold block mb-3">Get in Touch</span>
+                <h2 class="font-serif text-4xl text-white font-light mb-6">Let's craft your dream space together.</h2>
+                <p class="text-gray-400 font-light text-sm mb-8 leading-relaxed">
+                    Whether you are planning a villa in Bhubaneswar, an office penthouse in Cuttack, or a boutique retreat in Puri, our principal studio team is ready to consult.
+                </p>
+                <div class="space-y-4 text-sm text-gray-300">
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-location-dot text-accentGold w-5"></i>
+                        <span>Master Canteen / Saheed Nagar, Bhubaneswar, Odisha, 751001</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-phone text-accentGold w-5"></i>
+                        <span>+91 98765 43210 / +91 674 2345678</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <i class="fa-solid fa-envelope text-accentGold w-5"></i>
+                        <span>concierge@gbsolutions.odisha.in</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Consultation Form -->
+            <form class="space-y-4 bg-luxuryDark p-8 border border-white/10" onsubmit="event.preventDefault(); alert('Thank you! GBSOLUTIONS concierge will contact you within 24 hours.');">
+                <h3 class="font-serif text-2xl text-white mb-2">Request Private Consultation</h3>
+                <p class="text-gray-400 text-xs mb-6">Enter your details and our senior architectural lead will contact you.</p>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Full Name</label>
+                    <input type="text" required class="w-full bg-cardDark border border-white/10 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Phone Number</label>
+                    <input type="tel" required class="w-full bg-cardDark border border-white/10 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Project Type / Location in Odisha</label>
+                    <input type="text" placeholder="e.g. 4BHK Villa in Bhubaneswar" required class="w-full bg-cardDark border border-white/10 px-4 py-3 text-white text-sm focus:outline-none focus:border-accentGold">
+                </div>
+                <button type="submit" class="w-full bg-accentGold text-black font-semibold text-xs uppercase tracking-widest py-4 mt-2 hover:bg-white transition-all">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+            <p>&copy; 2026 GBSOLUTIONS, Odisha. All Rights Reserved.</p>
+            <div class="flex space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-accentGold">Instagram</a>
+                <a href="#" class="hover:text-accentGold">LinkedIn</a>
+                <a href="#" class="hover:text-accentGold">Pinterest</a>
+                <a href="#" class="hover:text-accentGold">YouTube</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- All Integrated JavaScript Handlers -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Cost Estimator Computation & Reveal Follow-up Form
+        function calculateEstimate() {
+            const scope = document.getElementById('est-scope').value;
+            const rooms = document.getElementById('est-rooms').value;
+            const style = document.getElementById('est-style').value;
+            const type = document.getElementById('est-type').value;
+
+            let baseRate = 42000;
+            let roomMultiplier = rooms === '2' ? 6 : rooms === '3' ? 9 : (rooms === '4' ? 14 : 16);
+            if (scope === 'villa') roomMultiplier *= 1.35;
+            if (scope === 'hospitality') roomMultiplier *= 1.45;
+            if (style === 'tropical' || style === 'minimalist') baseRate *= 1.2;
+            if (type === 'turnkey') baseRate *= 1.4;
+
+            let totalMin = Math.round(roomMultiplier * baseRate * 0.9);
+            let totalMax = Math.round(roomMultiplier * baseRate * 1.3);
+
+            document.getElementById('est-amount').innerText = `₹ ${totalMin.toLocaleString('en-IN')} - ₹ ${totalMax.toLocaleString('en-IN')}`;
+            document.getElementById('estimate-result').classList.remove('hidden');
+
+            const contactSection = document.getElementById('estimator-contact-section');
+            contactSection.classList.remove('hidden');
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 3. Estimator Callback Submission Handler
+        function handleEstimatorContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('ec-name').value;
+            const mobile = document.getElementById('ec-mobile').value;
+            const requirement = document.getElementById('ec-requirement').value;
+
+            document.getElementById('ec-success').classList.remove('hidden');
+            alert(`Thank you ${name}! Your callback request with requirement "${requirement}" has been logged for ${mobile}. Our team will call you within 24 hours.`);
+        }
+
+        // 4. Vendor Registration & ID Generator
+        function handleVendorReg(e) {
+            e.preventDefault();
+            const randomId = 'GB-VEND-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('v-id-display').innerHTML = `Your Vendor ID: <span class="text-accentGold">${randomId}</span>`;
+            document.getElementById('vendor-success').classList.remove('hidden');
+        }
+
+        // 5. Designer Registration & Jibika Portal Direct Access
+        function handleDesignerReg(e) {
+            e.preventDefault();
+            const randomDid = 'GB-JB-' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('assigned-did').innerText = randomDid;
+            
+            const portal = document.getElementById('jibika-portal');
+            portal.classList.remove('hidden');
+            portal.scrollIntoView({ behavior: 'smooth' });
+            
+            alert(`Registration successful! Your Designer ID is ${randomDid}. You have unlocked the active Jibika Freelance Projects Board.`);
+        }
+    </script>
+</body>
+</html>

@@ -5,13 +5,32 @@ import SiteHeader from "@/components/site/site-header";
 import SiteFooter from "@/components/site/site-footer";
 import Reveal from "@/components/site/reveal";
 import { listGallery } from "@/lib/gallery";
+import { breadcrumbSchema, jsonLd, shareImage, siteUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
+const description =
+  "Every finished GB Solutions project — homes, workspaces and hospitality across Bhubaneswar, Cuttack and Puri. Open one for photographs, the story and a 3D walkthrough.";
+
 export const metadata = {
   title: "Work",
-  description:
-    "Every finished GB Solutions project — homes, workspaces and hospitality across Bhubaneswar, Cuttack and Puri. Open one for photographs, the story and a 3D walkthrough.",
+  description,
+  alternates: { canonical: "/work" },
+  openGraph: {
+    title: "Work — GB Solutions interiors and turnkey builds",
+    description,
+    url: "/work",
+    siteName: "GB Solutions",
+    locale: "en_IN",
+    type: "website",
+    images: [shareImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Work — GB Solutions interiors and turnkey builds",
+    description,
+    images: [shareImage.url],
+  },
 };
 
 export default async function WorkPage() {
@@ -97,6 +116,26 @@ export default async function WorkPage() {
       </main>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd([
+            {
+              "@type": "CollectionPage",
+              "@id": `${siteUrl}/work#archive`,
+              url: `${siteUrl}/work`,
+              name: "The work archive — GB Solutions",
+              description,
+              isPartOf: { "@id": `${siteUrl}/#website` },
+            },
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Work", path: "/work" },
+            ]),
+          ]),
+        }}
+      />
     </>
   );
 }

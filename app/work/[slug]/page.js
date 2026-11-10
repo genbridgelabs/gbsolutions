@@ -7,18 +7,40 @@ import SiteFooter from "@/components/site/site-footer";
 import ProjectPhotos from "@/components/site/project-photos";
 import Reveal from "@/components/site/reveal";
 import { getGalleryItem, listGallery } from "@/lib/gallery";
+import { breadcrumbSchema, jsonLd, projectSchema } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const project = await getGalleryItem(slug);
-  if (!project) return { title: "Project not found" };
+  if (!project) {
+    return { title: "Project not found", robots: { index: false, follow: true } };
+  }
+  const title = `${project.title} — ${project.place} ${project.category.toLowerCase()}`;
   return {
     title: project.title,
     description: project.summary,
+    alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
-      title: `${project.title} — GB Solutions`,
+      title,
+      description: project.summary,
+      url: `/work/${project.slug}`,
+      siteName: "GB Solutions",
+      locale: "en_IN",
+      type: "article",
+      images: [
+        {
+          url: project.cover,
+          width: 2000,
+          height: 1500,
+          alt: project.coverAlt || project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
       description: project.summary,
       images: [project.cover],
     },
@@ -208,6 +230,20 @@ export default async function ProjectPage({ params }) {
       <div className="mt-20">
         <SiteFooter />
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: jsonLd([
+            projectSchema(project),
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Work", path: "/work" },
+              { name: project.title, path: `/work/${project.slug}` },
+            ]),
+          ]),
+        }}
+      />
     </>
   );
 }

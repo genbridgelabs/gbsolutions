@@ -6,11 +6,16 @@ import Gallery from "@/components/site/gallery";
 import VideoJournal from "@/components/site/video-journal";
 import ContactForm from "@/components/site/contact-form";
 import CostEstimator from "@/components/site/cost-estimator";
-import { materials, processSteps, studio } from "@/lib/content";
+import { faqs, materials, processSteps, studio } from "@/lib/content";
 import { listGallery } from "@/lib/gallery";
 import { listVideos } from "@/lib/videos";
+import { faqSchema, jsonLd } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = {
+  alternates: { canonical: "/" },
+};
 
 const ledger = [
   { value: "120", label: "homes handed over" },
@@ -297,6 +302,53 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Questions — real answers, and the source of the FAQPage schema. */}
+        <section id="questions" className="border-t border-line">
+          <div className="mx-auto max-w-[90rem] px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+            <div className="grid gap-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
+              <Reveal className="lg:sticky lg:top-28 lg:self-start">
+                <p className="label">Questions</p>
+                <p className="mt-6 max-w-[22ch] text-[0.82rem] leading-relaxed text-quiet">
+                  Answered before you pick up the phone.
+                </p>
+              </Reveal>
+
+              <div>
+                <Reveal>
+                  <h2 className="display-lg max-w-[20ch] text-ink">
+                    What people ask before the first meeting.
+                  </h2>
+                </Reveal>
+
+                <div className="mt-10 border-t border-line">
+                  {faqs.map((faq) => (
+                    <details
+                      key={faq.q}
+                      className="group border-b border-line py-5"
+                    >
+                      <summary className="flex cursor-pointer list-none items-baseline justify-between gap-6 [&::-webkit-details-marker]:hidden">
+                        <h3 className="font-display text-[1.12rem] leading-snug text-ink transition-colors duration-300 group-hover:text-brass sm:text-[1.28rem]">
+                          {faq.q}
+                        </h3>
+                        <span
+                          aria-hidden="true"
+                          className="relative mt-1 block h-3 w-3 shrink-0"
+                        >
+                          <span className="absolute left-0 top-1/2 h-px w-3 bg-brass" />
+                          <span className="absolute left-1/2 top-0 h-3 w-px bg-brass transition-transform duration-300 group-open:rotate-90" />
+                        </span>
+                      </summary>
+                      <p className="mt-3 max-w-[64ch] text-[0.92rem] leading-[1.78] text-ink-soft">
+                        {faq.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Video journal */}
         <section
           id="journal"
@@ -405,6 +457,11 @@ export default async function Home() {
       </main>
 
       <SiteFooter />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd([faqSchema(faqs)]) }}
+      />
     </>
   );
 }

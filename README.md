@@ -96,7 +96,8 @@ Then open http://localhost:3000.
 | `ADMIN_EMAIL` | The one admin login |
 | `ADMIN_PASSWORD` | Admin password (plain, compared in constant time) |
 | `SESSION_SECRET` | 32-byte hex string that signs the session cookie (min 24 chars) |
-| `NEXT_PUBLIC_SITE_URL` | Optional. Public origin used for absolute metadata URLs |
+| `NEXT_PUBLIC_SITE_URL` | Public origin used for canonicals, the sitemap, `robots.txt` and JSON-LD. Falls back to `https://www.gbatelier.in` |
+| `GOOGLE_SITE_VERIFICATION` | Optional. Emitted as the Search Console verification tag only when set |
 
 Change `ADMIN_PASSWORD` and regenerate `SESSION_SECRET` before this goes anywhere real:
 
@@ -115,6 +116,7 @@ Restart `npm run dev` after changing either value — and note that changing
 | `npm run build` | Production build |
 | `npm start` | Serve the production build |
 | `npm run lint` | ESLint |
+| `node scripts/make-og.mjs` | Re-renders the 1200×630 share card `public/media/og-cover.png` from a project photograph |
 | `node scripts/build-brand.mjs` | Rebuilds the transparent ink/paper marks in `public/brand` plus `app/icon.png`, `app/apple-icon.png` and `app/favicon.ico` (16/32/48) from `raw/logo-gbs.jpeg` |
 | `node scripts/build-videos.mjs` | Rebuilds the four journal clips in `public/media/video` with ffmpeg (slow pans from graded stills, grain, fades) |
 | `node --env-file=.env.local scripts/seed-content.mjs` | Seeds the gallery and video journal through the admin API. Skips collections that already have rows; `--force` appends anyway |
@@ -155,6 +157,44 @@ frames, ceiling light and dust — with the project's own photographs hung in it
 with `three` in WebGL. It walks and looks like a space, and it never claims to be
 somewhere the photographs are not. Swap in a real glTF scan and the same controls and
 HUD would carry it.
+
+---
+
+## Search and sharing
+
+Everything a crawler needs is generated from the data the pages already render:
+
+- `app/sitemap.js` — home, `/work` and every published project, with `lastmod` from the
+  record's `updatedAt`. Revalidates every ten minutes, so a project published in the
+  admin appears without a deploy. The 3D room pages are left out on purpose: they are
+  `noindex` because they carry no text of their own.
+- `app/robots.js` — allows everything except `/admin` and `/api/`, and points at the
+  sitemap.
+- `app/manifest.js` — name, icon and theme colour for installable and search surfaces.
+- `lib/seo.js` — the absolute site URL plus schema.org builders. `HomeAndConstructionBusiness`
+  (address, coordinates, opening hours, areas served) and `WebSite` sit on every page;
+  `FAQPage` on the homepage; `CollectionPage` + `BreadcrumbList` on `/work`; `CreativeWork`
+  + `BreadcrumbList` on each project.
+- Canonicals are declared per page (`app/page.js`, `/work`, `/work/[slug]`) rather than
+  inherited from the layout, and an unknown project slug answers 404 with `noindex`.
+- The public pages stay `force-dynamic`, so an edit in the admin is visible immediately;
+  the sitemap is the only cached route.
+- `public/media/og-cover.png` is the 1200×630 share card, rebuilt with
+  `node scripts/make-og.mjs`. Project pages share their own cover photograph instead.
+
+The homepage FAQ is not decoration. It answers the questions people actually type
+("interior cost per square foot Bhubaneswar", "turnkey vs design only") with the same
+numbers the estimator uses, and its text is what `FAQPage` structured data quotes. If
+you change a rate in `lib/estimator.js`, change the answer in `lib/content.js` too.
+
+**Set `NEXT_PUBLIC_SITE_URL` in production.** Canonicals, `robots.txt` and the sitemap
+are absolute and built from it; the fallback exists so a forgotten variable cannot ship
+localhost URLs, not so it can be ignored.
+
+**To get indexed faster:** verify the domain in Google Search Console (put the token in
+`GOOGLE_SITE_VERIFICATION`), submit `/sitemap.xml` once, then use *URL Inspection →
+Request indexing* on `/`, `/work` and the project pages. Add the same property to Bing
+Webmaster Tools, which imports the sitemap. Nothing in code beats those two steps.
 
 ---
 

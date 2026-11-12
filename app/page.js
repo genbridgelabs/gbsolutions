@@ -144,7 +144,7 @@ export default async function Home() {
                 <div className="mt-9 grid gap-8 md:grid-cols-2 md:gap-12">
                   <Reveal delay={90}>
                     <p className="max-w-[46ch] text-[0.95rem] leading-[1.78] text-ink-soft">
-                      GB Solutions started in 2011 with two people, a borrowed
+                      GB Solutions started in 2023 with two people, a borrowed
                       drafting table and a stubborn belief that interior work in
                       Odisha deserved better drawings. Fifteen years later we are
                       still small on purpose: one studio, one site team, one
